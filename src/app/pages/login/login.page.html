@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Acceder</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card style="margin-left: 20%; margin-right: 20%;  text-align: center;">
+        <ion-label><img src="https://logodix.com/logo/1713924.png"></ion-label>
+        <p></p>
+        <form [formGroup]="myForm">
+            <ion-label style="font-size: 2pc;">Correo electrónico</ion-label>
+            <ion-input type="text" placeholder="Introduzca aquí su correo electrónico" style="font-size: 1pc;" formControlName="email"></ion-input>
+            <ion-label style="font-size: 2pc;">Contraseña</ion-label>
+            <ion-input type="password" placeholder="Introduzca aquí su contraseña" style="font-size: 1pc;" formControlName="password"></ion-input>
+            <ion-button (click)="join()" expand="block" color="secondary">
+                Ingresar
+            </ion-button>
+        </form>
+    </ion-card>
+</ion-content>
