@@ -10,7 +10,8 @@ import { Estudiante } from '../models/estudiante';
 export class Tab3Page {
 
   public students:Estudiante[];
-
+  public index:boolean[];
+  
   constructor(private service:EstudianteService) {
     this.service.getStudents().subscribe(data=>{
       this.students=data.map(e=>{
@@ -23,8 +24,17 @@ export class Tab3Page {
           active:e.payload.doc.get("active")
         }as Estudiante
       })
+      this.index= new Array(this.students.length).fill(false);
     })
+    
   }
+
+  mostrarInfo(index:number) {
+   
+    console.log(this.index+" "+index);
+    this.index[index]=!this.index[index];
+  }
+
 
 }
  
